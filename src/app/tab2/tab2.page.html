@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-label slot="end" id="logout" (click)="salir()">Salir</ion-label>
+    <img src="../../assets/img/arrow.svg" alt="" id="salir" slot="end" (click)="salir()">
+
+
+    <img src="../../assets/img/circle-cropped.png" alt="" id="invitado"  *ngIf="identity === 'administrador' ">
+    <ion-title id="guest"  *ngIf="identity === 'administrador' "><strong>Arturo</strong></ion-title>
+
+    <img src="../../assets/img/boy.svg" alt="" id="invitado" *ngIf="identity === 'kids' ">
+    <ion-title id="guest" *ngIf="identity === 'kids' "><strong>Kids</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar *ngIf="identity === 'kids' "(ionChange)="searchMoviesKids($event)"></ion-searchbar>
+  <ion-searchbar *ngIf="identity === 'administrador' "(ionChange)="searchMovies($event)"></ion-searchbar>
+
+  <ion-item *ngFor="let m of movies">
+    <ion-card>
+      <img [src]="m.poster_path | imagen" alt="">
+      <ion-text>
+        <h1 style="text-align: center;">{{m.title}}</h1>
+      </ion-text>
+    </ion-card>
+  </ion-item>
+
+</ion-content>

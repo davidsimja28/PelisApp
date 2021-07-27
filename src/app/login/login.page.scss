@@ -1,0 +1,59 @@
+:host
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#administrador {
+  width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#invitado {
+  width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#kids {
+  width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#col {
+  margin-top: 15px;
+}
+
+.bg-image {
+  opacity: 10%;
+  position: absolute;
+  margin-left: -50%;
+  width: 100%;
+  height: auto;
+}
+
+.bg-image2{
+  opacity: 10%;
+  position: absolute;
+  margin-left: -50%;
+  margin-top: 58%;
+  width: 100%;
+  height: auto;
+}
+
+.bg-image3{
+  opacity: 10%;
+  position: absolute;
+  margin-left: -50%;
+  margin-top: 126%;
+  width: 100%;
+  height: auto;
+}

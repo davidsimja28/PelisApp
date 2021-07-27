@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-label slot="end" id="logout" (click)="salir()">Salir</ion-label>
+    <img
+      src="../../assets/img/arrow.svg"
+      alt=""
+      id="salir"
+      slot="end"
+      (click)="salir()"
+    />
+
+    <img
+      src="../../assets/img/circle-cropped.png"
+      alt=""
+      id="invitado"
+      *ngIf="identity === 'administrador' "
+    />
+    <ion-title id="guest" *ngIf="identity === 'administrador' "
+      ><strong>Arturo</strong></ion-title
+    >
+
+    <img
+      src="../../assets/img/boy.svg"
+      alt=""
+      id="invitado"
+      *ngIf="identity === 'kids' "
+    />
+    <ion-title id="guest" *ngIf="identity === 'kids' "
+      ><strong>Kids</strong></ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <h1 class="titulo">
+    <strong>Cinexcesos</strong
+    ><img src="../../assets/img/palomitas-de-maiz.svg" id="logo" alt="..." />
+  </h1>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2>
+          <strong>Estrenos</strong
+          ><img src="../../assets/img/premiere.svg" id="premiere" />
+        </h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-slide-show-backdrop
+    *ngIf="identity === 'administrador'"
+    [movies]="movies"
+  ></app-slide-show-backdrop>
+  <app-slide-show-backdrop
+    *ngIf="identity === 'kids'"
+    [movies]="moviesKids"
+  ></app-slide-show-backdrop>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2>
+          <strong>Cartelera</strong
+          ><img src="../../assets/img/claqueta.svg" alt="" id="cartelera" />
+        </h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-slideshow-poster
+    *ngIf="identity === 'administrador' "
+    [movies]="movies"
+  ></app-slideshow-poster>
+  <app-slideshow-poster
+    *ngIf="identity === 'kids' "
+    [movies]="moviesKids"
+  ></app-slideshow-poster>
+
+  <ion-grid *ngIf="identity === 'administrador' ">
+    <ion-row>
+      <ion-col>
+        <h2>
+          <strong>Populares</strong
+          ><img src="../../assets/img/top-tres.svg" alt="" id="cartelera" />
+        </h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-slide-show-pares
+    *ngIf="identity === 'administrador' "
+    [movies]="popularMovies"
+    (cargarMas)="cargarMas()"
+  ></app-slide-show-pares>
+</ion-content>

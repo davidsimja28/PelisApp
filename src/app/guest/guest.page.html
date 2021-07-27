@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-label slot="end" id="logout" (click)="salir()">Salir</ion-label>
+    <img
+      src="../../assets/img/arrow.svg"
+      alt=""
+      id="salir"
+      slot="end"
+      (click)="salir()"
+    />
+    <img src="../../assets/img/estrella-invitada.svg" alt="" id="invitado">
+    <ion-title id="guest"><strong>Invitado</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 class="titulo">
+    <strong>Cinexcesos</strong
+    ><img src="../../assets/img/palomitas-de-maiz.svg" id="logo" alt="..." />
+  </h1>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2>
+          <strong>Estrenos</strong
+          ><img src="../../assets/img/premiere.svg" id="premiere" />
+        </h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-slide-show-guest [movies]="tv"></app-slide-show-guest>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2>
+          <strong>Cartelera</strong
+          ><img src="../../assets/img/claqueta.svg" alt="" id="cartelera" />
+        </h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-slide-poster-guest [movies]="tv"></app-slide-poster-guest>
+</ion-content>
